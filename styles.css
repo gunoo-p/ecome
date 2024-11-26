@@ -1,0 +1,195 @@
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: white; /* 배경색 */
+  color: #333;
+  background: url(/img/bg.jpg) no-repeat center/cover;
+}
+
+/* 컨테이너: 화면 꽉 채우기 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* 헤더 */
+.header {
+  background-color: white;
+  height: 90px;
+  border-bottom: 3px solid #dcdcdc;
+  text-align: center;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  position: relative; /* 중앙 제목 배치를 위해 부모 요소를 기준으로 설정 */
+  width: 100%;
+  height: 100%;
+}
+
+.header .logo {
+  position: absolute;
+  left: 100px; /* 왼쪽 끝으로 이동 */
+}
+
+.header .logo img {
+  width: 70px;
+  height: auto;
+}
+
+.header .menu {
+  font-size: 17px;
+}
+
+.header .menu:nth-child(2) {
+  position: absolute;
+  left: 200px;
+  font-size: 17px;
+}
+.header .menu:nth-child(3) {
+  position: absolute;
+  left: 380px;
+  font-size: 17px;
+}
+.header .menu:nth-child(4) {
+  position: absolute;
+  left: 500px;
+  font-size: 17px;
+}
+.header .title {
+  margin: 0 auto; /* 가운데 정렬 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  font-size: 3em;
+  color: #285D3E;
+}
+
+.header .divider {
+  margin-top: 50px;
+  border: none;
+  height: 2px;
+  background-color: #dcdcdc;
+  width: 100%;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+	border-top: 2px solid #dcdcdc;
+}
+/* 부제목 */
+.subtitle {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 40px;
+  color: black;
+}
+
+/* 비교 섹션 */
+.comparison {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* 이미지 컨테이너 */
+.image-container {
+  position: relative;
+  margin-top: 40px;
+  flex: 1; /* 이미지가 화면 너비에 비례해 확장 */
+  max-width: 600px;
+}
+
+.fridge-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* VS 섹션 */
+.vs-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.vs-box {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255,255,255); opacity : 0.7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.vs-box p {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정색 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 팝업 콘텐츠 */
+.popup-content {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #5eab5e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #489148;
+}
+/* 숨김 클래스 */
+.hidden {
+  display: none;
+}
