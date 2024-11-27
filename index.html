@@ -6,6 +6,7 @@
     <title>냉장고 적정 내용물</title>
     <link rel="stylesheet" href="styles.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH2ZMMFC4X"></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="container">
@@ -22,69 +23,47 @@
         </div>
       </header>
 
-
       <!-- 비교 섹션 -->
-      <h2 class="subtitle">1. 냉장고의 적정 내용물은?</h2>
-      <div class="comparison">
-          <!-- 왼쪽 이미지 -->
-          <div class="image-container">
-            <img src="/img/quiz1.png" alt="90% 채워진 냉장고" onclick="recordAnswer('refrigerator_1', 'X')" class="fridge-image" />
-          </div>
-
-          <!-- VS -->
-          <div class="vs-container">
-            <div class="vs-box">
-              <p>VS</p>
-            </div>
-          </div>
-
-          <!-- 오른쪽 이미지 -->
-          <div class="image-container">
-            <img src="/img/quiz2.png" alt="60% 채워진 냉장고"  id="success-img" class="fridge-image" onclick="recordAnswer('refrigerator_1', 'O')"/>
-            <div id="popupOverlay" class="popup-overlay hidden">
-              <div class="popup-content">
-                  <p>정답입니다! <br/>
-                    냉장실의 가장 적절한 음식물 보관 비율은 60~70% 입니다. <br/>
-                   Tip.반대로 냉동실은 80~90%로 채우는게 에너지 절약에 더 도움이 된다고 합니다!</p>
-                  <button id="closePopup">닫기</button>
-              </div>
-          </div>
-          </div>
-        </div>
+      <h2 class="subtitle">냉장고의 적정 내용물은?</h2>
+<div class="comparison">
+  <div class="image-container">
+    <img
+      src=""
+      alt="왼쪽 이미지"
+      class="fridge-image"
+    />
+  </div>
+  <div class="vs-container">
+    <div class="vs-box">
+      <p>VS</p>
     </div>
-
+  </div>
+  <div class="image-container">
+    <img
+      src=""
+      alt="오른쪽 이미지"
+      class="fridge-image"
+    />
+  </div>
+</div>
+<div id="popupOverlay" class="popup-overlay hidden">
+  <div class="popup-content">
+    <p id="popupMessage"></p>
+    <button id="closePopup">다음 문제</button>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
     <script>
-      // 요소 선택
-      const successImg = document.getElementById('success-img');
-      const popupOverlay = document.getElementById('popupOverlay');
-      const closePopup = document.getElementById('closePopup');
-
-      // 이미지 클릭 시 팝업 표시
-      successImg.addEventListener('click', () => {
-        popupOverlay.classList.remove('hidden');
-      });
-
-      // 닫기 버튼 클릭 시 팝업 숨김
-      closePopup.addEventListener('click', () => {
-        popupOverlay.classList.add('hidden');
-      });
-
       // GA4 초기화 코드
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-FH2ZMMFC4X');
-
-      // 답변 기록 함수
-      function recordAnswer(questionId, answer) {
-        gtag('event', 'quiz_answer', {
-          'event_category': 'OX_Quiz', // 카테고리 설정
-          'event_label': questionId,   // 문제 ID
-          'value': answer              // 선택한 답 (O/X)
-        });
-        console.log(`Question: ${questionId}, Answer: ${answer} sent to GA4.`);
+      function gtag() {
+        dataLayer.push(arguments);
       }
+      gtag("js", new Date());
+
+      gtag("config", "G-FH2ZMMFC4X");
     </script>
   </body>
 </html>

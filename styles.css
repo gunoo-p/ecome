@@ -74,7 +74,7 @@ body {
   margin: 0 auto; /* 가운데 정렬 */
   text-align: center; /* 텍스트 가운데 정렬 */
   font-size: 3em;
-  color: #285D3E;
+  color: #285d3e;
 }
 
 .header .divider {
@@ -88,7 +88,7 @@ body {
 .bg {
   width: 100%;
   height: 100%;
-	border-top: 2px solid #dcdcdc;
+  border-top: 2px solid #dcdcdc;
 }
 /* 부제목 */
 .subtitle {
@@ -132,7 +132,8 @@ body {
 .vs-box {
   width: 100px;
   height: 100px;
-  background-color: rgb(255,255,255); opacity : 0.7;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.7;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -146,7 +147,6 @@ body {
   color: black;
   margin: 0;
 }
-
 
 .popup-overlay {
   position: fixed;
@@ -175,7 +175,9 @@ body {
   font-weight: bold;
   margin-bottom: 20px;
 }
-
+.popup-overlay.hidden {
+  display: none;
+}
 .popup-content button {
   padding: 10px 20px;
   font-size: 16px;
@@ -192,4 +194,12 @@ body {
 /* 숨김 클래스 */
 .hidden {
   display: none;
+}
+
+.succ {
+  color: #ff7043;
+}
+
+.diff {
+  color: #3941af;
 }
