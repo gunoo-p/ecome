@@ -1,11 +1,11 @@
 const quizData = [
   {
     id: "refrigerator_1",
-    subtitle: "1.냉장고의 적정 내용물은?",
+    subtitle: "1.냉장실의 적정 내용물은?",
     imgLeft: "/img/refrigerator_quiz1-1.png",
     imgRight: "/img/refrigerator_quiz1-2.png",
     correctAnswer: "O",
-    correctMessage: "정답입니다! 60~70%만 채우는 게 좋습니다!",
+    correctMessage: "<span style='color: #2E7D32;'>정답</span>입니다! <br/> <span style='color: #FF7043;'>냉장실</span>는 <span style='color: #FF7043;'>60~70%</span>만 채우는 게 좋습니다!<br/> Tip. 반면에 <span style='color: #3941AF;'>냉동실</span>은 <span style='color: #3941AF;'>80~90%</span> 채우는 편이 에너지 절약에 도움이 된다고 합니다!",
     incorrectMessage: "오답입니다! 냉장실은 너무 많이 채우면 냉각 효율이 떨어져요.",
   },
   {
@@ -54,9 +54,9 @@ function recordAnswer(questionId, answer) {
   const popupOverlay = document.getElementById("popupOverlay");
 
   if (isCorrect) {
-    popupMessage.textContent = quiz.correctMessage;
+    popupMessage.innerHTML = quiz.correctMessage;
   } else {
-    popupMessage.textContent = quiz.incorrectMessage;
+    popupMessage.innerHTML = quiz.incorrectMessage;
   }
   // 팝업 표시
   popupOverlay.classList.remove("hidden");
