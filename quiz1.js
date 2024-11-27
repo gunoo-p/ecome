@@ -1,9 +1,18 @@
+// GA4 초기화 코드
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-FH2ZMMFC4X");
+
 const quizData = [
   {
     id: "refrigerator_1",
     subtitle: "1.냉장실의 적정 내용물은?",
-    imgLeft: "/img/quiz/refrigerator_quiz1-1.png",
-    imgRight: "/img/quiz/refrigerator_quiz1-2.png",
+    imgLeft: "img/quiz/refrigerator_quiz1-1.png",
+    imgRight: "img/quiz/refrigerator_quiz1-2.png",
     correctAnswer: "O",
     correctMessage:
       "<span style='color: #2E7D32;'>정답</span>입니다! <br/> <span style='color: #FF7043;'>냉장실</span>는 <span style='color: #FF7043;'>60~70%</span>만 채우는 게 좋습니다!<br/> Tip. 반면에 <span style='color: #3941AF;'>냉동실</span>은 <span style='color: #3941AF;'>80~90%</span> 채우는 편이 에너지 절약에 도움이 된다고 합니다!",
@@ -13,8 +22,8 @@ const quizData = [
   {
     id: "refrigerator_2",
     subtitle: "2.냉장고의 온도를 낮게 설정할수록 전기를 절약할 수 있다.",
-    imgLeft: "/img/quiz/refrigerator_quiz2-1.png",
-    imgRight: "/img/quiz/refrigerator_quiz2-2.png",
+    imgLeft: "img/quiz/refrigerator_quiz2-1.png",
+    imgRight: "img/quiz/refrigerator_quiz2-2.png",
     correctAnswer: "X",
     correctMessage:
       "<span style='color: #2E7D32;'>정답</span>입니다!<br/> 너무 낮은 온도로 설정하면 냉장고가 과도하게 작동해 전력을 더 많이 소비합니다. 적정 온도는 냉장실 3-5°C, 냉동실 -18°C입니다. ",
@@ -122,15 +131,6 @@ const quizData = [
   },
 ];
 
-// GA4 초기화 코드
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-
-gtag("config", "G-FH2ZMMFC4X");
-
 // 버튼 클릭 이벤트로 문제 섹션 표시
 document.getElementById("startButton").addEventListener("click", function () {
   // 문제풀기 버튼 숨기기
@@ -141,6 +141,7 @@ document.getElementById("startButton").addEventListener("click", function () {
 });
 
 let currentQuizIndex = 0;
+let correctCount = 0; // 맞춘 문제 수를 추적
 
 function loadQuiz() {
   const quiz = quizData[currentQuizIndex];
@@ -169,6 +170,11 @@ function recordAnswer(questionId, answer) {
 
   console.log(`Question: ${questionId}, Answer: ${answer}, Correct: ${isCorrect}`);
 
+  // 맞춘 경우 정답 카운트 증가
+  if (isCorrect) {
+    correctCount++;
+  }
+
   // 팝업 메시지 설정
   const popupMessage = document.getElementById("popupMessage");
   const popupOverlay = document.getElementById("popupOverlay");
@@ -183,7 +189,6 @@ function recordAnswer(questionId, answer) {
 
   // 팝업 닫기 및 다음 문제로 이동
   document.getElementById("closePopup").addEventListener("click", () => {
-    const popupOverlay = document.getElementById("popupOverlay");
     popupOverlay.classList.add("hidden");
 
     // 다음 문제로 이동
@@ -197,18 +202,29 @@ function nextQuiz() {
   if (currentQuizIndex < quizData.length) {
     loadQuiz(); // 다음 문제 로드
   } else {
-    alert("모든 퀴즈를 완료했습니다!");
-    // 최종 화면 표시 또는 다른 동작 수행
+    // 결과 표시
+    showResult();
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadQuiz);
+function showResult() {
+  // 문제 섹션 숨기기
+  document.getElementById("comparisonSection").classList.add("hidden");
 
-// 버튼 클릭 이벤트로 문제 섹션 표시
-document.getElementById("startButton").addEventListener("click", function () {
-  // 문제풀기 버튼 숨기기
-  document.getElementById("startButtonContainer").classList.add("hidden");
+  // 결과 섹션 표시
+  const resultSection = document.createElement("div");
+  resultSection.id = "resultSection";
+  resultSection.style.textAlign = "center";
+  resultSection.style.marginTop = "50px";
+  resultSection.innerHTML = `
+    <h2>퀴즈 결과</h2>
+    <p>총 ${quizData.length}문제 중 ${correctCount}문제를 맞췄습니다!</p>
+    <button id="retryButton">다시 도전하기</button>
+  `;
+  document.body.appendChild(resultSection);
 
-  // 문제 섹션 보이기
-  document.getElementById("comparisonSection").classList.remove("hidden");
-});
+  // 다시 도전 버튼 이벤트 추가
+  document.getElementById("retryButton").addEventListener("click", () => {
+    location.reload(); // 페이지 새로고침으로 초기화
+  });
+}

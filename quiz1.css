@@ -191,3 +191,28 @@ body {
 .diff {
   color: #3941af;
 }
+
+/* 결과 */
+#resultSection h2 {
+  font-size: 24px;
+  color: #2e7d32;
+}
+
+#resultSection p {
+  font-size: 18px;
+  color: #ff7043;
+}
+
+#retryButton {
+  padding: 10px 20px;
+  background-color: #3941af;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#retryButton:hover {
+  background-color: #2e7d32;
+}
