@@ -166,7 +166,8 @@ function recordAnswer(questionId, answer) {
     event_label: questionId,
     value: answer,
   });
-
+  
+  console.log(`Question: ${questionId}, Answer: ${answer}, Correct: ${isCorrect}`);
   // 팝업 메시지 설정
   const popupMessage = document.getElementById("popupMessage");
   const popupOverlay = document.getElementById("popupOverlay");
