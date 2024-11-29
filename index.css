@@ -1,0 +1,430 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+
+
+
+
+.header {
+    width: 1920px;
+    height: 90px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.header img {
+    height: 70px;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 48px; /* 메뉴 항목 사이 간격 */
+}
+
+.menu-item {
+    font-size: 17px;
+    text-decoration: none;
+    color: var(--unnamed-color-000000);
+    font-family: var(--unnamed-font-family-pretendard);
+}
+
+.main {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;         /* 추가: 가로 스크롤 방지 */
+    min-height: 100vh;          /* 추가: 최소 높이 설정 */
+    overflow-x:hidden;
+} 
+
+.background-image {
+    width: 1920px;
+    height: 960px;
+    min-height: 100vh;
+    background-image: url('main-background.jpg');
+    background-size: 1920px 960px;
+    background-position: top;        /* center에서 top으로 변경 */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 0;
+    margin: 0 auto;
+}
+
+.gray-box {
+    width: 1520px;
+    height: 860px;
+    background-color: #F6F6F6;
+    border-radius: 48px;
+    margin-top: 190px;
+    display: flex;
+    flex-direction: column;    /* 추가: 세로 방향 정렬 */
+    align-items: center;       /* 추가: 가운데 정렬 */
+    padding-top: 50px;
+}
+
+.gray-box-text {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 40px;      /* 추가: 아래 텍스트와의 간격 */
+}
+
+.gray-box-subtext {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 30px;
+    text-align: center;
+    color: #000000;
+    margin-top: 40px;         /* 추가: 위 텍스트와의 간격 */
+}
+
+.main-text {
+    position: relative;
+    top: 200px;
+    left: 200px;
+    padding-top: 70px;
+    z-index: 1;
+}
+
+.main-title {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 100px;
+    color: #000000;
+    margin-bottom: 60px;
+    text-align: left;        /* 수정: center에서 left로 변경 */
+    margin-top: 0;
+}
+
+.main-subtitle {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-weight: 300;
+    font-size: 60px;
+    color: #000000;
+    text-align: left;        /* 수정: center에서 left로 변경 */
+    margin: 0;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* 수정: center에서 flex-start로 변경 */
+    transform: translateY(-50%);
+}
+
+.main-title .highlight {
+    color: #2E7D32; /* EcoME 텍스트만 초록색으로 설정 */
+}
+.answer-button {
+    width: 111px;
+    height: 111px;
+    border-radius: 50%;
+    background-color: #FF7043;
+    border: none;
+    color: white;
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.answer-text {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.answer-result {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.answer-explanation {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.answer-final {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 30px;
+}
+.answer-result span {
+    color: #FF7043;
+}
+
+.answer-final .eco-highlight {
+    color: #2E7D32;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+.info-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+}
+
+.info-title {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.info-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 0 360px;
+}
+
+.info-box {
+    width: 400px;
+    height: 500px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.info-box:last-child {
+    border-radius: 80px;
+}
+
+.info-box img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.info-box h3 {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.more-button {
+    padding: 10px 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--unnamed-font-family-pretendard); 
+    font-size: 24px; 
+}
+.more-button:hover {
+    background-color: #f5f5f5;
+}
+
+.bottom-info {
+    margin-top: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 250px;
+}
+
+.eco-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.bottom-text {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.5;
+}
+.quiz-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 180px;  /* info-boxes로부터의 간격 */
+    margin-bottom: 200px;  /* bottom-info 로고와의 간격 */
+}
+
+.quiz-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.quiz-button {
+    padding: 10px 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--unnamed-font-family-pretendard);
+    font-size: 24px;
+    color: #000000;
+}
+
+.quiz-button:hover {
+    background-color: #f5f5f5;  /* 호버 효과 추가 */
+}
+/* 새로운 페이드인 애니메이션 클래스 추가 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s linear, transform 1s linear;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+.footer {
+    width: 100vw;
+    height: 120px;
+    background-color: #243849;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+    padding: 0 200px;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-text p {
+    margin: 0;
+    font-size: 14px;
+    font-family: var(--unnamed-font-family-pretendard);
+}
+
+
+
+:root {
+
+    /* Colors: */
+    --unnamed-color-f6f6f6: #F6F6F6;
+    --unnamed-color-ff7043: #FF7043;
+    --unnamed-color-f5f5dc: #F5F5DC;
+    --unnamed-color-fbc02d: #FBC02D;
+    --unnamed-color-2e7d32: #2E7D32;
+    --unnamed-color-000000: #000000;
+    
+    /* Font/text values */
+    --unnamed-font-family-pretendard: Pretendard;
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-weight-100: 100px;
+    --unnamed-font-weight-200: 200px;
+    --unnamed-font-weight-300: 300px;
+    --unnamed-font-weight-600: 600px;
+    --unnamed-font-weight-bold: bold;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-size-60: 60px;
+    --unnamed-character-spacing-0: 0px;
+    --unnamed-line-spacing-71: 71px;
+    }
+    
+    /* Character Styles */
+    .unnamed-character-style-1 {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-bold);
+    font-size: var(--unnamed-font-size-60);
+    line-height: var(--unnamed-line-spacing-71);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    }
+    .unnamed-character-style-2 {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-600);
+    font-size: var(--unnamed-font-size-60);
+    line-height: var(--unnamed-line-spacing-71);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    }
+    .unnamed-character-style-3 {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-60);
+    line-height: var(--unnamed-line-spacing-71);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    }
+    .unnamed-character-style-4 {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-200);
+    font-size: var(--unnamed-font-size-60);
+    line-height: var(--unnamed-line-spacing-71);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    }
+    .unnamed-character-style-5 {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-300);
+    font-size: var(--unnamed-font-size-60);
+    line-height: var(--unnamed-line-spacing-71);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    }
+    .unnamed-character-style-6 {
+    font-family: var(--unnamed-font-family-pretendard);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-100);
+    font-size: var(--unnamed-font-size-60);
+    line-height: var(--unnamed-line-spacing-71);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    }
+
